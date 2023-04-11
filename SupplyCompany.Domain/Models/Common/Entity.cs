@@ -6,7 +6,7 @@
         }
 
         public override bool Equals(object? obj) {
-            return obj is Entity<TId> entity && Id.Equals(entity.Id);
+            return obj is Entity<TId> entity && Id!.Equals(entity.Id);
         }
         public static bool operator ==(Entity<TId> left, Entity<TId> right) {
             return Equals(left, right);
