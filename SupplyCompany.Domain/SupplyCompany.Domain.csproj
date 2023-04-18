@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Abstract\" />
+    <Folder Include="Models\Supplier\ValueObjects\" />
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,12 @@
+F:\SelfProjects\SupplyCompany\SupplyCompany.Domain\obj\Debug\net7.0\SupplyCompany.Domain.csproj.AssemblyReference.cache
+F:\SelfProjects\SupplyCompany\SupplyCompany.Domain\obj\Debug\net7.0\SupplyCompany.Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\SelfProjects\SupplyCompany\SupplyCompany.Domain\obj\Debug\net7.0\SupplyCompany.Domain.AssemblyInfoInputs.cache
+F:\SelfProjects\SupplyCompany\SupplyCompany.Domain\obj\Debug\net7.0\SupplyCompany.Domain.AssemblyInfo.cs
+F:\SelfProjects\SupplyCompany\SupplyCompany.Domain\obj\Debug\net7.0\SupplyCompany.Domain.csproj.CoreCompileInputs.cache
+F:\SelfProjects\SupplyCompany\SupplyCompany.Domain\bin\Debug\net7.0\SupplyCompany.Domain.deps.json
+F:\SelfProjects\SupplyCompany\SupplyCompany.Domain\bin\Debug\net7.0\SupplyCompany.Domain.dll
+F:\SelfProjects\SupplyCompany\SupplyCompany.Domain\bin\Debug\net7.0\SupplyCompany.Domain.pdb
+F:\SelfProjects\SupplyCompany\SupplyCompany.Domain\obj\Debug\net7.0\SupplyCompany.Domain.dll
+F:\SelfProjects\SupplyCompany\SupplyCompany.Domain\obj\Debug\net7.0\refint\SupplyCompany.Domain.dll
+F:\SelfProjects\SupplyCompany\SupplyCompany.Domain\obj\Debug\net7.0\SupplyCompany.Domain.pdb
+F:\SelfProjects\SupplyCompany\SupplyCompany.Domain\obj\Debug\net7.0\ref\SupplyCompany.Domain.dll

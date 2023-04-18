@@ -1,4 +1,4 @@
-﻿namespace SupplyCompany.Domain.Models.Common {
+﻿namespace SupplyCompany.Domain.Models {
     public abstract class ValueObject : IEquatable<ValueObject> {
         public abstract IEnumerable<object> GetEqualityComponents();
         public override bool Equals(object? obj) {

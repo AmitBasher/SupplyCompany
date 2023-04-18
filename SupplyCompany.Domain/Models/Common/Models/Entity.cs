@@ -1,4 +1,4 @@
-﻿namespace SupplyCompany.Domain.Models.Common {
+﻿namespace SupplyCompany.Domain.Models {
     public abstract class Entity<TId> : IEquatable<Entity<TId>> {
         public TId Id { get; protected set; }
         protected Entity(TId id) {
