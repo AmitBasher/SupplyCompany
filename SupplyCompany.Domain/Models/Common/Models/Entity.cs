@@ -21,5 +21,8 @@
         public override int GetHashCode() {
             return Id!.GetHashCode();
         }
+        public Entity<TId> copy() {
+            return (Entity<TId>)this.MemberwiseClone();
+        }
     }
 }

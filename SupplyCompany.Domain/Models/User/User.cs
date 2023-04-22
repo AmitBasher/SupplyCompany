@@ -1,6 +1,6 @@
 namespace SupplyCompany.Domain.Models.user
 {
-    public abstract class User : AggregateRoot<UserId> {
+    public class User : AggregateRoot<UserId> {
         public string FirstName { get; }
         public string LastName { get; }
         public string Email { get; }
@@ -8,7 +8,7 @@ namespace SupplyCompany.Domain.Models.user
         public DateTime DateCreated { get; }
         public DateTime DateLastModified { get; }
 
-        protected User(
+        private User(
             UserId Id,
             string FirstName,
             string LastName,
@@ -22,6 +22,18 @@ namespace SupplyCompany.Domain.Models.user
             this.DateCreated = DateTime.Now;
             this.DateLastModified = DateTime.Now;
         }
-        
+        public static User Create(
+            string FirstName,
+            string LastName,
+            string Email,
+            string Password) {
+            //validation
+            return new(
+                UserId.Create(),
+                FirstName,
+                LastName,
+                Email,
+                Password);
+        }
     }
 }

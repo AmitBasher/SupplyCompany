@@ -1,6 +1,6 @@
 namespace SupplyCompany.Domain.Models.product
 {
-    public sealed class ProductId : ID<ProductId>{
+    public sealed class ProductId : ID<ProductId> {
         public ProductId(Guid value) : base(value) {
         }
 

@@ -1,46 +1,42 @@
-namespace SupplyCompany.Domain.Models.Customer
-{
-    public sealed class Customer : User {
-        public Location ShippingAddress { get; }
-        public Location BillingAddress { get; }
+namespace SupplyCompany.Domain.Models.customer;
 
-        private readonly List<SupplyRequestId> _supplyRequests = new();
-        public IReadOnlyList<SupplyRequestId> SupplyRequests => 
-            _supplyRequests.AsReadOnly();
-            
-        private Customer(
-            UserId Id,
-            string FirstName,
-            string LastName,
-            string Email,
-            string Password,
-            Location ShippingAddress,
-            Location BillingAddress) :
-            base(Id,FirstName,LastName,Email,Password){
-            this.ShippingAddress = ShippingAddress;
-            this.BillingAddress = BillingAddress;
-        }
-        public static Customer Create(
-            string FirstName,
-            string LastName,
-            string Email,
-            string Password,
-            Location ShippingAddress,
-            Location BillingAddress) {
+public sealed class Customer : AggregateRoot<CustomerId> {
+    public UserId UserId { get; }
+    public Location ShippingAddress { get; }
+    public Location BillingAddress { get; }
 
-            //ToDo:Validations
+    private readonly List<Order> _orderHistory;
+    private readonly List<ProductReview> _productReviews;
+    private readonly List<SupplierReview> _supplierReviews;
+    public IReadOnlyList<Order> OrderHistory =>
+        _orderHistory.AsReadOnly();
+    public IReadOnlyList<ProductReview> ProductReviews =>
+        _productReviews.AsReadOnly();
+    public IReadOnlyList<SupplierReview> SupplierReviews =>
+        _supplierReviews.AsReadOnly();
 
-            var customer = new Customer(
-                UserId.Create(),
-                FirstName,
-                LastName,
-                Email,
-                Password,
-                ShippingAddress,
-                BillingAddress
-            );
-            UserFactory.CreateNew(customer);
-            return customer;
-        }
+    private Customer(
+        CustomerId Id,
+        UserId UserId,
+        Location ShippingAddress,
+        Location BillingAddress) :
+        base(Id) {
+        this.UserId = UserId;
+        this.ShippingAddress = ShippingAddress;
+        this.BillingAddress = BillingAddress;
+    }
+    public static Customer Create(
+        UserId UserId,
+        Location ShippingAddress,
+        Location BillingAddress) {
+
+        //ToDo:Validations
+
+        return new(
+            CustomerId.Create(),
+            UserId,
+            ShippingAddress,
+            BillingAddress
+        ); ;
     }
 }

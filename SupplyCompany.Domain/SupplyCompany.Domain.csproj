@@ -7,8 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Abstract\" />
-    <Folder Include="Models\Supplier\ValueObjects\" />
+    <None Include="Models\SupplyRequst\ValueObjects\SupplierReviewId.cs~RF2be0aba8.TMP" />
   </ItemGroup>
 
 </Project>

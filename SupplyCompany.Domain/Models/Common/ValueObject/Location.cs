@@ -1,9 +1,6 @@
-using SupplyCompany.Domain.Models.Common;
+namespace SupplyCompany.Domain.Models.Common;
 
-namespace SupplyCompany.Domain.Models.Customer;
-
-public sealed class Location : ValueObject
-{
+public sealed class Location : ValueObject {
     public string State { get; }
     public string City { get; }
     public string Address { get; }

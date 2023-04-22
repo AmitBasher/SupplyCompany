@@ -1,45 +1,39 @@
-using SupplyCompany.Domain.Models.Common;
-using SupplyCompany.Domain.Models.user;
+namespace SupplyCompany.Domain.Models.supplier;
 
-namespace SupplyCompany.Domain.Models.supplier
-{
-    public sealed class Supplier : User
-    {
-        private readonly List<SupplyRequest> _dealsHistory = new();
-        public IReadOnlyList<SupplyRequest> DealsHistoryIds => _dealsHistory.AsReadOnly();
-        
-        public AverageRatings Rating { get; }
-        public DateTime DateCreated { get; }
-        public DateTime DateLastModified { get; }
+public sealed class Supplier : AggregateRoot<SupplierId>{
 
-        private Supplier(
-            UserId Id,
-            string FirstName,
-            string LastName,
-            string Email,
-            string Password,
-            AverageRatings Rating):
-            base(Id,FirstName,LastName,Email,Password){
-            this.Rating = Rating;
-            this.DateCreated = DateTime.Now;
-            this.DateLastModified = DateTime.Now;
-        }
+    public UserId UserId { get; set; }
+    public AverageRatings Rating { get; }
+    public DateTime DateCreated { get; }
+    public DateTime DateLastModified { get; }
+    private readonly List<Product> _products = new();
+    private readonly List<SupplierReview> _reviews = new();
+    private readonly List<Order> _ordersHistory = new();
+    public IReadOnlyList<Product> Products => _products.AsReadOnly();
+    public IReadOnlyList<SupplierReview> Reviews => _reviews.AsReadOnly();
+    public IReadOnlyList<Order> OrdersHistoryIds => _ordersHistory.AsReadOnly();
+    private Supplier(
+        SupplierId Id,
+        UserId UserId,
+        DateTime DateCreated,
+        DateTime DateLastModified,
+        AverageRatings Rating):
+        base(Id) {
+        this.UserId = UserId;
+        this.Rating = Rating;
+        this.DateCreated = DateCreated;
+        this.DateLastModified = DateLastModified;
+    }
 
-        public static Supplier CreateNew(
-            string FirstName,
-            string LastName,
-            string Email,
-            string Password) {
-            //ToDo:Validations
-            var supplier = new Supplier(
-                UserId.Create(),
-                FirstName,
-                LastName,
-                Email,
-                Password,
-                AverageRatings.CreateNew());
-            UserFactory.CreateNew(supplier);
-            return supplier;
-        }
+    public static Supplier CreateNew(
+        UserId UserId) {
+        //ToDo:Validations
+        var supplier = new Supplier(
+            SupplierId.Create(),
+            UserId,
+            DateTime.UtcNow,
+            DateTime.UtcNow,
+            AverageRatings.CreateNew());
+        return supplier;
     }
 }
