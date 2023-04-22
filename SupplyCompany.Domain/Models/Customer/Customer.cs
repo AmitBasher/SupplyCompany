@@ -5,9 +5,9 @@ public sealed class Customer : AggregateRoot<CustomerId> {
     public Location ShippingAddress { get; }
     public Location BillingAddress { get; }
 
-    private readonly List<Order> _orderHistory;
-    private readonly List<ProductReview> _productReviews;
-    private readonly List<SupplierReview> _supplierReviews;
+    private readonly List<Order> _orderHistory = new();
+    private readonly List<ProductReview> _productReviews = new();
+    private readonly List<SupplierReview> _supplierReviews = new();
     public IReadOnlyList<Order> OrderHistory =>
         _orderHistory.AsReadOnly();
     public IReadOnlyList<ProductReview> ProductReviews =>

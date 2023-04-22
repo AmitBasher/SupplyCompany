@@ -6,7 +6,7 @@
         public int SupplyAvailability { get; }
         public int Discount { get; }
 
-        private readonly List<ProductAttribute> _attributes;
+        private readonly List<ProductAttribute> _attributes=new();
         public IReadOnlyList<ProductAttribute> Attributes =>
             _attributes.AsReadOnly();
         private SubProduct(

@@ -5,7 +5,7 @@ public class Order : AggregateRoot<OrderId>{
     public OrderPriceValue OrderPrice { get; }
     public Location ShippingTo { get; }
     public DateTime CreatedDateTime { get; }
-    private readonly List<SupplyRequest> _supplyRequests;
+    private readonly List<SupplyRequest> _supplyRequests = new();
     public IReadOnlyList<SupplyRequest> SupplyRequests
         => _supplyRequests.AsReadOnly();
     private Order(

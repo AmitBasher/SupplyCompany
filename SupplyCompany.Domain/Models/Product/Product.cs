@@ -7,8 +7,8 @@ namespace SupplyCompany.Domain.Models.product
         public DateTime DateCreated { get; }
         public DateTime DateLastModified { get; }
 
-        private readonly List<SubProduct> _subProducts;
-        private readonly List<ProductReview> _productReviews;
+        private readonly List<SubProduct> _subProducts = new();
+        private readonly List<ProductReview> _productReviews = new();
         public IReadOnlyList<SubProduct> SubProducts 
             => _subProducts.AsReadOnly();
         public IReadOnlyList<ProductReview> ProductReviews
