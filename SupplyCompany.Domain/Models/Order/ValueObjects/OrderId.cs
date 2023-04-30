@@ -1,9 +1,8 @@
-namespace SupplyCompany.Domain.Models.order
-{
-    public sealed class OrderId : ID<OrderId> {
-        public OrderId(Guid value) : base(value) {
-        }
+namespace SupplyCompany.Domain.Models.order;
 
-        public static OrderId Create() => new (Guid.NewGuid());
+public sealed class OrderId : ID<OrderId> {
+    public OrderId(Guid value) : base(value) {
     }
+    public static OrderId Create() => new(Guid.NewGuid());
+    public static OrderId CreateFrom(Guid id) => new(id);
 }

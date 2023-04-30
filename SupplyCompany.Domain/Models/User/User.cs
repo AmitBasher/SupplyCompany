@@ -5,22 +5,24 @@ namespace SupplyCompany.Domain.Models.user
         public string LastName { get; }
         public string Email { get; }
         public string Password { get; }
-        public DateTime DateCreated { get; }
-        public DateTime DateLastModified { get; }
+        public DateTime CreatedDateTime { get; }
+        public DateTime LastModifiedDateTime { get; }
 
         private User(
             UserId Id,
             string FirstName,
             string LastName,
             string Email,
-            string Password
+            string Password,
+            DateTime CreatedDateTime,
+            DateTime LastModifiedDateTime
         ) : base(Id){
             this.FirstName = FirstName;
             this.LastName = LastName;
             this.Email = Email;
             this.Password = Password;
-            this.DateCreated = DateTime.Now;
-            this.DateLastModified = DateTime.Now;
+            this.CreatedDateTime = CreatedDateTime;
+            this.LastModifiedDateTime = LastModifiedDateTime;
         }
         public static User Create(
             string FirstName,
@@ -33,7 +35,9 @@ namespace SupplyCompany.Domain.Models.user
                 FirstName,
                 LastName,
                 Email,
-                Password);
+                Password,
+                DateTime.UtcNow,
+                DateTime.UtcNow);
         }
     }
 }

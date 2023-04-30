@@ -26,9 +26,5 @@
         public bool Equals(ValueObject? other) {
             return Equals((object?)other);
         }
-        public ValueObject copy() {
-            return (ValueObject)this.MemberwiseClone();
-        }
     }
-
 }

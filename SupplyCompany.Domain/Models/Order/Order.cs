@@ -1,43 +1,41 @@
-﻿namespace SupplyCompany.Domain.Models.order; 
+﻿using SupplyCompany.Domain.Models.supplyRequest;
+
+namespace SupplyCompany.Domain.Models.order; 
 public class Order : AggregateRoot<OrderId>{
-    public CustomerId CustomerId { get; }
-    public SupplierId SupplierId { get; }
-    public OrderPriceValue OrderPrice { get; }
-    public Location ShippingTo { get; }
-    public DateTime CreatedDateTime { get; }
-    private readonly List<SupplyRequest> _supplyRequests = new();
-    public IReadOnlyList<SupplyRequest> SupplyRequests
-        => _supplyRequests.AsReadOnly();
+    public CustomerId CustomerId { get; private set; }
+    public SupplierId SupplierId { get; private set; }
+    public OrderPriceValue OrderPriceValue { get; private set; }
+    public Location ShippingTo { get; private set; }
+    public DateTime CreatedDateTime { get; private set; }
+    //private readonly List<SupplyRequest> _supplyRequests = new();
+    //public IReadOnlyList<SupplyRequest> SupplyRequests
+    //    => _supplyRequests.AsReadOnly();
     private Order(
         OrderId Id,
         CustomerId CustomerId, 
         SupplierId SupplierId, 
-        List<SupplyRequest> SupplyRequests,
-        OrderPriceValue OrderPrice, 
-        Location ShippingTo, 
         DateTime CreatedDateTime):base(Id) {
         this.CustomerId=CustomerId;
         this.SupplierId=SupplierId;
-        this._supplyRequests=SupplyRequests;
-        this.OrderPrice=OrderPrice;
-        this.ShippingTo=ShippingTo;
         this.CreatedDateTime=CreatedDateTime;
     }
+    
     public static Order Create(
         CustomerId CustomerId,
         SupplierId SupplierId,
-        Location ShippingTo,
-        params SupplyRequest[] SupplyRequests) {
+        Location ShippingTo
+        ,params SupplyRequest[] SupplyRequests
+        ) {
+
         //validations
-        if (SupplyRequests.Length<=0)
-             throw new ArgumentException();
+
         return new(
             OrderId.Create(),
             CustomerId,
             SupplierId,
-            SupplyRequests.ToList(),
-            OrderPriceValue.Create(SupplyRequests),
-            ShippingTo,
-            DateTime.UtcNow);
+            DateTime.UtcNow) { 
+            ShippingTo = ShippingTo,
+            //_supplyRequests = SupplyRequests.ToList(),
+            OrderPriceValue = OrderPriceValue.Create(SupplyRequests)};
     }
 }

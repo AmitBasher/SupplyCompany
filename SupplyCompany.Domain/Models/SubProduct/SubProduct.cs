@@ -1,30 +1,28 @@
 ﻿namespace SupplyCompany.Domain.Models.subProduct {
-    public sealed class SubProduct : AggregateRoot<SubProductId> {
-        public ProductReviewId MainProductId { get; }
-        public string SubTitle { get; }
-        public double Price { get; }
-        public int SupplyAvailability { get; }
-        public int Discount { get; }
+    public sealed class SubProduct : Entity<SubProductId> {
+        public ProductId ProductId { get; private set; }
+        public SupplierId SupplierId { get; private set; }
+        public AverageRatings Rating { get; private set; }
+        public string SubTitle { get; private set; }
+        public double Price { get; private set; }
+        public int SupplyAvailability { get; private set; }
+        public int Discount { get; private set; }
 
-        private readonly List<ProductAttribute> _attributes=new();
+        private readonly List<ProductAttribute> _attributes = new();
         public IReadOnlyList<ProductAttribute> Attributes =>
             _attributes.AsReadOnly();
         private SubProduct(
             SubProductId id,
-            ProductReviewId MainProductId,
             string SubTitle,
             double Price,
             int SupplyAvailability,
             int Discount) : base(id) {
-            this.MainProductId = MainProductId;
             this.SubTitle = SubTitle;
             this.Price = Price;
             this.SupplyAvailability = SupplyAvailability;
             this.Discount = Discount;
-            _attributes = new();
         }
         public static SubProduct Create(
-            ProductReviewId MainProductId,
             string SubTitle,
             double Price,
             int SupplyAvailability,
@@ -32,11 +30,11 @@
             //validation
             return new(
                 SubProductId.Create(),
-                MainProductId,
                 SubTitle,
                 Price,
                 SupplyAvailability,
-                Discount);
+                Discount ){ 
+                Rating=AverageRatings.CreateNew() };
         }
     }
 }

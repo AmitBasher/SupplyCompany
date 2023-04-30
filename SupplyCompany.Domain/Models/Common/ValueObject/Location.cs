@@ -1,11 +1,11 @@
 namespace SupplyCompany.Domain.Models.Common;
 
-public sealed class Location : ValueObject {
-    public string State { get; }
-    public string City { get; }
-    public string Address { get; }
+public class Location : ValueObject {
+    public string State { get; private set; }
+    public string City { get; private set; }
+    public string Address { get; private set; }
 
-    private Location(
+    public Location(
         string state,
         string city,
         string address)
@@ -31,5 +31,11 @@ public sealed class Location : ValueObject {
         yield return State;
         yield return City;
         yield return Address;
+    }
+    public Location Copy() {
+        return (Location)this.MemberwiseClone();
+    }
+    public static Location CreateFrom(Location nl) {
+        return new(nl.State, nl.City, nl.Address);
     }
 }

@@ -1,43 +1,48 @@
 ﻿namespace SupplyCompany.Domain.Models.productReview; 
 public class ProductReview :AggregateRoot<ProductReviewId> {
-    public SubProductId SubProductId { get; }
-    public CustomerId CustomerId { get; }
-    public SupplierId SupplierId { get; }
-    public SupplyRequestId SupplyRequestId { get; }
-    public Rating Rate { get; }
-    public string Desciption { get; }
+    public ProductId ProductId { get; private set; }
+    public SubProductId SubProductId { get; private set; }
+    public CustomerId CustomerId { get; private set; }
+    public SupplierId SupplierId { get; private set; }
+    public SupplyRequestId SupplyRequestId { get; private set; }
+    public Rating Rating { get; private set; }
+    public string Desciption { get; private set; }
+    public DateTime CreatedDateTime { get; private set; }
+    public DateTime LastModifiedDateTime { get; private set; }
 
     private ProductReview(
         ProductReviewId Id,
+        ProductId ProductId,
         SubProductId SubProductId, 
         CustomerId CustomerId, 
         SupplierId SupplierId, 
         SupplyRequestId SupplyRequestId, 
-        Rating Rate, 
         string Desciption)
         : base(Id){
+        this.ProductId = ProductId;
         this.SubProductId=SubProductId;
         this.CustomerId=CustomerId;
         this.SupplierId=SupplierId;
         this.SupplyRequestId=SupplyRequestId;
-        this.Rate=Rate;
         this.Desciption=Desciption;
     }
     public static ProductReview Create(
+        ProductId ProductId,
         SubProductId SubProductId,
         CustomerId CustomerId,
         SupplierId SupplierId,
         SupplyRequestId SupplyRequestId,
-        Rating Rate,
+        Rating Rating,
         string Desciption) {
         //validation
         return new(
             ProductReviewId.Create(),
+            ProductId,
             SubProductId,
             CustomerId,
             SupplierId,
             SupplyRequestId,
-            Rate,
-            Desciption);
+            Desciption) { 
+            Rating = Rating};
     }
 }

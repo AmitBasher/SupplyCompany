@@ -1,49 +1,45 @@
-﻿using SupplyCompany.Domain.Models.Common;
-using SupplyCompany.Domain.Models.supplier;
-
-namespace SupplyCompany.Domain.Models.supplierReview;
-public class SupplierReview : AggregateRoot<SubProductId> {
-    public CustomerId Customer { get; }
-    public SupplierId Supplier { get; }
-    public SupplyRequestId SupplyRequest { get; }
-    public string Description { get; }
-    public Rating Rating { get; }
-    public DateTime CreatedDateTime { get; }
-    public DateTime LastModifiedDateTime { get; }
+﻿namespace SupplyCompany.Domain.Models.supplierReview;
+public class SupplierReview : AggregateRoot<SupplierReviewId> {
+    public CustomerId CustomerId { get; private set; }
+    public SupplierId SupplierId { get; private set; }
+    public SupplyRequestId SupplyRequestId { get; private set; }
+    public string Description { get; private set; }
+    public Rating Rating { get; private set; }
+    public DateTime CreatedDateTime { get; private set; }
+    public DateTime LastModifiedDateTime { get; private set; }
 
     private SupplierReview(
-        SubProductId Id,
-        CustomerId Customer,
-        SupplierId Supplier,
-        SupplyRequestId SupplyRequest,
+        SupplierReviewId Id,
+        CustomerId CustomerId,
+        SupplierId SupplierId,
+        SupplyRequestId SupplyRequestId,
         string Description,
-        Rating Rating,
         DateTime CreatedDateTime,
         DateTime LastModifiedDateTime) :base(Id) { 
-        this.Customer = Customer;
-        this.Supplier = Supplier;
-        this.SupplyRequest = SupplyRequest;
+        this.CustomerId = CustomerId;
+        this.SupplierId = SupplierId;
+        this.SupplyRequestId = SupplyRequestId;
         this.Description = Description;
-        this.Rating = Rating;
         this.CreatedDateTime = CreatedDateTime;
         this.LastModifiedDateTime = LastModifiedDateTime;
     }
     public static SupplierReview Create(
-        CustomerId Customer,
-        SupplierId Supplier,
-        SupplyRequestId SupplyRequest,
-        string Description,
-        Rating Rating) {
+        CustomerId CustomerId,
+        SupplierId SupplierId,
+        SupplyRequestId SupplyRequestId,
+        string Description
+        ,Rating Rating
+        ) {
         //Validation
         return new(
-            SubProductId.Create(),
-            Customer,
-            Supplier,
-            SupplyRequest,
-            Description, 
-            Rating,
+            SupplierReviewId.Create(),
+            CustomerId,
+            SupplierId,
+            SupplyRequestId,
+            Description,
             DateTime.UtcNow,
-            DateTime.UtcNow);
+            DateTime.UtcNow) {
+            Rating = Rating};
     }
 }
 

@@ -1,9 +1,9 @@
 namespace SupplyCompany.Domain.Models.supplierReview;
 
-public sealed class supplierReviewId : ID<supplierReviewId>
+public sealed class SupplierReviewId : ID<SupplierReviewId>
 {
-    public supplierReviewId(Guid value) : base(value)
-    {
-    }
-    public static supplierReviewId Create() => new(Guid.NewGuid());
+    public SupplierReviewId(Guid value) : base(value)
+    {}
+    public static SupplierReviewId Create() => new(Guid.NewGuid());
+    public static SupplierReviewId CreateFrom(Guid id) => new(id);
 }
