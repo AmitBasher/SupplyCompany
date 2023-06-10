@@ -71,12 +71,12 @@ namespace SupplyCompany.Infrastructure.DAL.Configuration {
 
                 //attributes.HasKey(p=>p.)
 
-                attributes.Property(p => p.SubName)
+                attributes.Property(p => p.Title)
                     .HasColumnName("SubName")
                     .IsRequired()
                     .HasMaxLength(30);
 
-                attributes.Property(p => p.SubValue)
+                attributes.Property(p => p.Value)
                     .HasColumnName("SubValue")
                     .IsRequired()
                     .HasMaxLength(200);

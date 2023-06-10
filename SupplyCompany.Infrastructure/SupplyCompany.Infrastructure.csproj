@@ -18,8 +18,4 @@
     <ProjectReference Include="..\SupplyCompany.Domain\SupplyCompany.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Repository\" />
-  </ItemGroup>
-
 </Project>

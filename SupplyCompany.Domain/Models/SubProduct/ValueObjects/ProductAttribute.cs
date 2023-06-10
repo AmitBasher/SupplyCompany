@@ -1,27 +1,25 @@
 namespace SupplyCompany.Domain.Models.subProduct;
 
 public sealed class ProductAttribute : ValueObject {
-    public string SubName { get; }
-    public string SubValue { get; }
+    public string Title { get; }
+    public string Value { get; }
     private ProductAttribute(
-        string SubName,
-        string SubValue) { 
-        this.SubName = SubName;
-        this.SubValue = SubValue;
+        string Title,
+        string Value) { 
+        this.Title = Title;
+        this.Value = Value;
     }
     public static ProductAttribute Create(
-        string SubName,
-        string SubValue) {
-
-        //validation
+        string Title,
+        string Value) {
+        //ToDo:ProductAttribute Validation
 
         return new(
-            SubName, 
-            SubValue);
+            Title,
+            Value);
     }
-
     public override IEnumerable<object> GetEqualityComponents() {
-        yield return SubName; 
-        yield return SubValue;
+        yield return Title; 
+        yield return Value;
     }
 }

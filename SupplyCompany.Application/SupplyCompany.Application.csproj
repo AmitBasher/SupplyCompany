@@ -7,11 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Models\SupplyRequst\ValueObjects\SupplierReviewId.cs~RF2be0aba8.TMP" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Repositories\" />
+    <ProjectReference Include="..\SupplyCompany.Domain\SupplyCompany.Domain.csproj" />
+    <ProjectReference Include="..\SupplyCompany.Infrastructure\SupplyCompany.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

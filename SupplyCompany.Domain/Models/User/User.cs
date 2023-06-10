@@ -1,12 +1,12 @@
 namespace SupplyCompany.Domain.Models.user
 {
     public class User : AggregateRoot<UserId> {
-        public string FirstName { get; }
-        public string LastName { get; }
-        public string Email { get; }
-        public string Password { get; }
-        public DateTime CreatedDateTime { get; }
-        public DateTime LastModifiedDateTime { get; }
+        public string FirstName { get; private set; }
+        public string LastName { get; private set; }
+        public string Email { get; private set; }
+        public string Password { get; private set; }
+        public DateTime CreatedDateTime { get; private set; }
+        public DateTime LastModifiedDateTime { get; private set; }
 
         private User(
             UserId Id,
@@ -38,6 +38,14 @@ namespace SupplyCompany.Domain.Models.user
                 Password,
                 DateTime.UtcNow,
                 DateTime.UtcNow);
+        }
+        public void Update(User newUser) {
+            FirstName = newUser.FirstName;
+            LastName = newUser.LastName;
+            Email = newUser.Email;
+            Password = newUser.Password;
+            CreatedDateTime = newUser.CreatedDateTime;
+            LastModifiedDateTime = DateTime.UtcNow;
         }
     }
 }

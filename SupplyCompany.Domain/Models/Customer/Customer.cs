@@ -2,7 +2,7 @@ namespace SupplyCompany.Domain.Models.customer;
 
 public sealed class Customer : AggregateRoot<CustomerId> {
     public UserId UserId { get; private set; }
-    public Location ShippingAddress { get; private set; }
+    public Location? ShippingAddress { get; private set; }
 
     private readonly List<Order> _orderHistory = new();
     private readonly List<ProductReview> _productReviews = new();

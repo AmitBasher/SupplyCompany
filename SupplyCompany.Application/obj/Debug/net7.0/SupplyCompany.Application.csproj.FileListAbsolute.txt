@@ -1,0 +1,5 @@
+F:\SelfProjects\SupplyCompany\SupplyCompany.Application\obj\Debug\net7.0\SupplyCompany.Application.csproj.AssemblyReference.cache
+F:\SelfProjects\SupplyCompany\SupplyCompany.Application\obj\Debug\net7.0\SupplyCompany.Application.GeneratedMSBuildEditorConfig.editorconfig
+F:\SelfProjects\SupplyCompany\SupplyCompany.Application\obj\Debug\net7.0\SupplyCompany.Application.AssemblyInfoInputs.cache
+F:\SelfProjects\SupplyCompany\SupplyCompany.Application\obj\Debug\net7.0\SupplyCompany.Application.AssemblyInfo.cs
+F:\SelfProjects\SupplyCompany\SupplyCompany.Application\obj\Debug\net7.0\SupplyCompany.Application.csproj.CoreCompileInputs.cache

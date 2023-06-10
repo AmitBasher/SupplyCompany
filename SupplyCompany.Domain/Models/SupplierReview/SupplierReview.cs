@@ -4,7 +4,7 @@ public class SupplierReview : AggregateRoot<SupplierReviewId> {
     public SupplierId SupplierId { get; private set; }
     public SupplyRequestId SupplyRequestId { get; private set; }
     public string Description { get; private set; }
-    public Rating Rating { get; private set; }
+    public Rating? Rating { get; private set; }
     public DateTime CreatedDateTime { get; private set; }
     public DateTime LastModifiedDateTime { get; private set; }
 
