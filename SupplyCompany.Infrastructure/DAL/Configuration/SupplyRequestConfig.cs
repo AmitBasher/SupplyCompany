@@ -1,11 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace SupplyCompany.Infrastructure.DAL.Configuration {
+
+namespace SupplyCompany.Infrastructure.DAL.Configuration
+{
     public class SupplyRequestConfig : IEntityTypeConfiguration<SupplyRequest> {
         public void Configure(EntityTypeBuilder<SupplyRequest> builder) {
             builder.ToTable("SupplyRequests");
 
-            builder.HasKey(sr => new { sr.Id, sr.CustomerId });
+            builder.HasKey(sr =>  sr.Id );
 
             builder.Property(sr => sr.Id)
                 .HasColumnName("SupplyRequestId")

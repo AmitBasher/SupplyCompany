@@ -10,8 +10,4 @@
     <None Include="Models\SupplyRequst\ValueObjects\SupplierReviewId.cs~RF2be0aba8.TMP" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
 </Project>

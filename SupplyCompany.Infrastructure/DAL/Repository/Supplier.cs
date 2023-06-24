@@ -1,5 +1,5 @@
 ﻿namespace SupplyCompany.Infrastructure.DAL.Repository {
-    public class SupplierRepository {
+    public class SupplierRepository : ISupplierRepository {
         private readonly DataContext _db;
         public SupplierRepository(DataContext db) {
             _db = db;

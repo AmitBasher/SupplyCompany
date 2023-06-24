@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace SupplyCompany.Infrastructure.DAL.Configuration {
-    public class ProductConfig : IEntityTypeConfiguration<Product> {
-        public void Configure(EntityTypeBuilder<Product> builder) {
+    public class ProductConfig : IEntityTypeConfiguration<Domain.Models.product.Product> {
+        public void Configure(EntityTypeBuilder<Domain.Models.product.Product> builder) {
             builder.ToTable("Products");
 
             builder.HasKey(prod => prod.Id);

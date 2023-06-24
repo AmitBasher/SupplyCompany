@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace SupplyCompany.Domain.Models.user
 {
     public sealed class UserId : ID<UserId> {
@@ -5,5 +7,6 @@ namespace SupplyCompany.Domain.Models.user
         }
         public static UserId Create() => new(Guid.NewGuid());
         public static UserId CreateFrom(Guid id) => new(id);
+        public static UserId CreateFrom(string id) => new(Guid.Parse(id));
     }
 }

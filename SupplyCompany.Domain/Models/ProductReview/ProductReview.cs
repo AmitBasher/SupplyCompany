@@ -1,4 +1,4 @@
-﻿namespace SupplyCompany.Domain.Models.productReview; 
+﻿namespace SupplyCompany.Domain.Models.productReview;
 public class ProductReview :AggregateRoot<ProductReviewId> {
     public ProductId ProductId { get; private set; }
     public SubProductId SubProductId { get; private set; }

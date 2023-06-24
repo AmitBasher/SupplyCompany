@@ -1,0 +1,12 @@
+F:\SelfProjects\SupplyCompany\SupplyCompany.DTO\bin\Debug\net7.0\SupplyCompany.DTO.deps.json
+F:\SelfProjects\SupplyCompany\SupplyCompany.DTO\bin\Debug\net7.0\SupplyCompany.DTO.dll
+F:\SelfProjects\SupplyCompany\SupplyCompany.DTO\bin\Debug\net7.0\SupplyCompany.DTO.pdb
+F:\SelfProjects\SupplyCompany\SupplyCompany.DTO\obj\Debug\net7.0\SupplyCompany.DTO.csproj.AssemblyReference.cache
+F:\SelfProjects\SupplyCompany\SupplyCompany.DTO\obj\Debug\net7.0\SupplyCompany.DTO.GeneratedMSBuildEditorConfig.editorconfig
+F:\SelfProjects\SupplyCompany\SupplyCompany.DTO\obj\Debug\net7.0\SupplyCompany.DTO.AssemblyInfoInputs.cache
+F:\SelfProjects\SupplyCompany\SupplyCompany.DTO\obj\Debug\net7.0\SupplyCompany.DTO.AssemblyInfo.cs
+F:\SelfProjects\SupplyCompany\SupplyCompany.DTO\obj\Debug\net7.0\SupplyCompany.DTO.csproj.CoreCompileInputs.cache
+F:\SelfProjects\SupplyCompany\SupplyCompany.DTO\obj\Debug\net7.0\SupplyCompany.DTO.dll
+F:\SelfProjects\SupplyCompany\SupplyCompany.DTO\obj\Debug\net7.0\refint\SupplyCompany.DTO.dll
+F:\SelfProjects\SupplyCompany\SupplyCompany.DTO\obj\Debug\net7.0\SupplyCompany.DTO.pdb
+F:\SelfProjects\SupplyCompany\SupplyCompany.DTO\obj\Debug\net7.0\ref\SupplyCompany.DTO.dll

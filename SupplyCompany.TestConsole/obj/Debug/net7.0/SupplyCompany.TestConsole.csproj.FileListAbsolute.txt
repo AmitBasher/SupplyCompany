@@ -16,15 +16,6 @@ F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\bin\Debug\net7.0\Microso
 F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
 F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\bin\Debug\net7.0\Microsoft.Extensions.Caching.Abstractions.dll
-F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\bin\Debug\net7.0\Microsoft.Extensions.Caching.Memory.dll
-F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Abstractions.dll
-F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.dll
-F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\bin\Debug\net7.0\Microsoft.Extensions.Logging.dll
-F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
-F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
-F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
 F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\bin\Debug\net7.0\Microsoft.Identity.Client.dll
 F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
 F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
@@ -65,3 +56,8 @@ F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\obj\Debug\net7.0\refint\
 F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\obj\Debug\net7.0\SupplyCompany.TestConsole.pdb
 F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\obj\Debug\net7.0\SupplyCompany.TestConsole.genruntimeconfig.cache
 F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\obj\Debug\net7.0\ref\SupplyCompany.TestConsole.dll
+F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\bin\Debug\net7.0\MediatR.dll
+F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\bin\Debug\net7.0\MediatR.Contracts.dll
+F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\bin\Debug\net7.0\SupplyCompany.Application.dll
+F:\SelfProjects\SupplyCompany\SupplyCompany.TestConsole\bin\Debug\net7.0\SupplyCompany.Application.pdb

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -7,8 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SupplyCompany.Domain\SupplyCompany.Domain.csproj" />
-    <ProjectReference Include="..\SupplyCompany.Infrastructure\SupplyCompany.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Orders\Queries\" />
+    <Folder Include="ProductReviews\Queries\" />
+    <Folder Include="SubProducts\Commands\Create\" />
+    <Folder Include="SubProducts\Commands\Modify\" />
+    <Folder Include="SubProducts\Common\" />
+    <Folder Include="SubProducts\Queries\" />
+    <Folder Include="SupplyRequests\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Suppliers\Commands\Create\CreateCustomerCommand.cs~RF7fb8f5e.TMP" />
   </ItemGroup>
 
 </Project>

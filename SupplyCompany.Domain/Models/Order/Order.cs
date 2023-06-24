@@ -7,19 +7,22 @@ public class Order : AggregateRoot<OrderId>{
     public OrderPriceValue OrderPriceValue { get; private set; }
     public Location ShippingTo { get; private set; }
     public DateTime CreatedDateTime { get; private set; }
-    //private readonly List<SupplyRequest> _supplyRequests = new();
-    //public IReadOnlyList<SupplyRequest> SupplyRequests
-    //    => _supplyRequests.AsReadOnly();
+    private List<SupplyRequest> _supplyRequests = new();
+    public IReadOnlyList<SupplyRequest> SupplyRequests
+        => _supplyRequests.AsReadOnly();
     private Order(
         OrderId Id,
         CustomerId CustomerId, 
-        SupplierId SupplierId, 
-        DateTime CreatedDateTime):base(Id) {
+        SupplierId SupplierId,
+        DateTime CreatedDateTime
+        //,List<SupplyRequestId> _supplyRequests
+        ) : base(Id) {
         this.CustomerId=CustomerId;
         this.SupplierId=SupplierId;
         this.CreatedDateTime=CreatedDateTime;
+        //this._supplyRequests=_supplyRequests;
     }
-    
+
     public static Order Create(
         CustomerId CustomerId,
         SupplierId SupplierId,
@@ -33,9 +36,11 @@ public class Order : AggregateRoot<OrderId>{
             OrderId.Create(),
             CustomerId,
             SupplierId,
-            DateTime.UtcNow) { 
+            DateTime.UtcNow
+            ) {
             ShippingTo = ShippingTo,
-            //_supplyRequests = SupplyRequests.ToList(),
-            OrderPriceValue = OrderPriceValue.Create(SupplyRequests)};
+            OrderPriceValue = OrderPriceValue.Create(SupplyRequests),
+            _supplyRequests = SupplyRequests.ToList()
+        };
     }
 }

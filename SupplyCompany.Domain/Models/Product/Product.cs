@@ -1,3 +1,5 @@
+
+
 namespace SupplyCompany.Domain.Models.product
 {
     public sealed class Product : AggregateRoot<ProductId> {
@@ -8,8 +10,8 @@ namespace SupplyCompany.Domain.Models.product
         public DateTime CreatedDateTime { get; private set;  }
         public DateTime LastModifiedDateTime { get; private set;  }
 
-        private readonly List<SubProduct> _subProducts = new();
-        private readonly List<ProductReview> _productReviews = new();
+        private List<SubProduct> _subProducts = new();
+        private List<ProductReview> _productReviews = new();
         public IReadOnlyList<SubProduct> SubProducts
             => _subProducts.AsReadOnly();
         public IReadOnlyList<ProductReview> ProductReviews
@@ -32,7 +34,8 @@ namespace SupplyCompany.Domain.Models.product
         public static Product Create(
             SupplierId SupplierId,
             string Name,
-            string Description) {
+            string Description,
+            List<SubProduct> subProducts) {
             //validation
             return new(
                 ProductId.Create(),
@@ -41,7 +44,8 @@ namespace SupplyCompany.Domain.Models.product
                 Description,
                 DateTime.UtcNow,
                 DateTime.UtcNow) {
-                ratings = AverageRatings.CreateNew()};
+                ratings = AverageRatings.CreateNew(),
+                _subProducts = subProducts };
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace SupplyCompany.Infrastructure.DAL.Configuration {
+namespace SupplyCompany.Infrastructure.DAL.Configuration
+{
     public class SubProductConfig : IEntityTypeConfiguration<SubProduct> {
         public void Configure(EntityTypeBuilder<SubProduct> builder) {
 

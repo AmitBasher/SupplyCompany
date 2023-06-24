@@ -15,3 +15,5 @@ F:\SelfProjects\SupplyCompany\SupplyCompany.Infrastructure\obj\Debug\net7.0\refi
 F:\SelfProjects\SupplyCompany\SupplyCompany.Infrastructure\obj\Debug\net7.0\SupplyCompany.Infrastructure.pdb
 F:\SelfProjects\SupplyCompany\SupplyCompany.Infrastructure\obj\Debug\net7.0\SupplyCompany.Infrastructure.genruntimeconfig.cache
 F:\SelfProjects\SupplyCompany\SupplyCompany.Infrastructure\obj\Debug\net7.0\ref\SupplyCompany.Infrastructure.dll
+F:\SelfProjects\SupplyCompany\SupplyCompany.Infrastructure\bin\Debug\net7.0\SupplyCompany.Application.dll
+F:\SelfProjects\SupplyCompany\SupplyCompany.Infrastructure\bin\Debug\net7.0\SupplyCompany.Application.pdb
