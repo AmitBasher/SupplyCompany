@@ -1,22 +1,18 @@
-
-
 namespace SupplyCompany.Domain.Models.product
 {
     public sealed class Product : AggregateRoot<ProductId> {
         public SupplierId SupplierId { get; private set; }
         public string Name { get; private set; }
         public string Description { get; private set; }
-        public AverageRatings ratings { get; private set; }
+        public AverageRatings Ratings { get; private set; }
         public DateTime CreatedDateTime { get; private set;  }
         public DateTime LastModifiedDateTime { get; private set;  }
-
         private List<SubProduct> _subProducts = new();
         private List<ProductReview> _productReviews = new();
         public IReadOnlyList<SubProduct> SubProducts
             => _subProducts.AsReadOnly();
         public IReadOnlyList<ProductReview> ProductReviews
             => _productReviews.AsReadOnly();
-
         private Product(
             ProductId Id,
             SupplierId SupplierId,
@@ -44,7 +40,7 @@ namespace SupplyCompany.Domain.Models.product
                 Description,
                 DateTime.UtcNow,
                 DateTime.UtcNow) {
-                ratings = AverageRatings.CreateNew(),
+                Ratings = AverageRatings.CreateNew(),
                 _subProducts = subProducts };
         }
     }

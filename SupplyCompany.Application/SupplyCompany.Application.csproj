@@ -17,11 +17,6 @@
   <ItemGroup>
     <Folder Include="Orders\Queries\" />
     <Folder Include="ProductReviews\Queries\" />
-    <Folder Include="SubProducts\Commands\Create\" />
-    <Folder Include="SubProducts\Commands\Modify\" />
-    <Folder Include="SubProducts\Common\" />
-    <Folder Include="SubProducts\Queries\" />
-    <Folder Include="SupplyRequests\" />
   </ItemGroup>
 
   <ItemGroup>

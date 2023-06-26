@@ -17,13 +17,13 @@ namespace SupplyCompany.Infrastructure.DAL.Configuration
                     id => id.Value,
                     id => SupplierId.CreateFrom(id));
 
-            builder.Property(sp => sp.ProductId)
-                .HasColumnName("ProductId")
-                .IsRequired()
-                .ValueGeneratedNever()
-                .HasConversion(
-                    id => id.Value,
-                    id => ProductId.CreateFrom(id));
+            //builder.Property(sp => sp.ProductId)
+            //    .HasColumnName("ProductId")
+            //    .IsRequired()
+            //    .ValueGeneratedNever()
+            //    .HasConversion(
+            //        id => id.Value,
+            //        id => ProductId.CreateFrom(id));
 
             builder.Property(sp => sp.Id)
                 .HasColumnName("SubProductId")
@@ -66,11 +66,9 @@ namespace SupplyCompany.Infrastructure.DAL.Configuration
 
                 attributes.ToTable("SubProductAttributes");
 
-                attributes.WithOwner().HasPrincipalKey(a => a.Id);
-                attributes.WithOwner().HasPrincipalKey(a => a.ProductId);
-                attributes.WithOwner().HasPrincipalKey(a => a.SupplierId);
-
-                //attributes.HasKey(p=>p.)
+                attributes.WithOwner()
+                          .HasPrincipalKey(a => a.Id)
+                          .HasConstraintName("SubProductId");
 
                 attributes.Property(p => p.Title)
                     .HasColumnName("SubName")

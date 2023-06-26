@@ -64,23 +64,23 @@ namespace SupplyCompany.Infrastructure.DAL.Configuration
                 .HasColumnName("LastModified")
                 .IsRequired();
 
-            builder.Property(sr => sr.OrderId)
-                .IsRequired(false)
-                .HasConversion(
-                    id => id.Value,
-                    id => OrderId.CreateFrom(id));
+        //    builder.Property(sr => sr.OrderId)
+        //        .IsRequired(false)
+        //        .HasConversion(
+        //            id => id.Value,
+        //            id => OrderId.CreateFrom(id));
 
-            builder.Property(sr => sr.ProductReviewId)
-                .IsRequired(false)
-                .HasConversion(
-                    id => id.Value,
-                    id => ProductReviewId.CreateFrom(id));
+        //    builder.Property(sr => sr.ProductReviewId)
+        //        .IsRequired(false)
+        //        .HasConversion(
+        //            id => id.Value,
+        //            id => ProductReviewId.CreateFrom(id));
 
-            builder.Property(sr => sr.SupplierReviewId)
-                .IsRequired(false)
-                .HasConversion(
-                    id => id.Value,
-                    id => SupplierReviewId.CreateFrom(id));
+        //    builder.Property(sr => sr.SupplierReviewId)
+        //        .IsRequired(false)
+        //        .HasConversion(
+        //            id => id.Value,
+        //            id => SupplierReviewId.CreateFrom(id));
         }
     }
 }

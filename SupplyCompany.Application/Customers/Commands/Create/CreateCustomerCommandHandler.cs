@@ -7,7 +7,7 @@ public class CreateSupplierCommandHandler : IRequestHandler<CreateCustomerComman
         _customerRepository = customerRepository;
     }
     public async Task<Customer> Handle(CreateCustomerCommand request, CancellationToken cancellationToken) {
-        /*Todo:Create Validation
+        /* Todo:Create Validation
          */
         var userId = UserId.CreateFrom(request.UserId);
         var ShippingAddress = Location.CreateNew(request.ShippingAddress.State,

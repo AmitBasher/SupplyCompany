@@ -1,10 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SupplyCompany.Api.Common;
-using SupplyCompany.Application.Customers.Commands.Create;
-using SupplyCompany.Domain.Models.customer;
-using SupplyCompany.DTO.Customer;
-
 namespace SupplyCompany.Api.Controllers;
 [Route("api/[controller]")]
 [ApiController]

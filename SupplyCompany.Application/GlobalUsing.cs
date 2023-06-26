@@ -14,3 +14,6 @@ global using MediatR;
 global using SupplyCompany.Application.Users.Common;
 global using SupplyCompany.Application.Common.Interfaces.Authentication;
 global using SupplyCompany.Application.Interfaces.Repositories;
+
+global using SupplyCompany.Infrastructure.DAL.Repository;
+global using SupplyCompany.Application.Common.Command;

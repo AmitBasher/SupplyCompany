@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace SupplyCompany.Infrastructure.DAL.Configuration {
-    public class ProductConfig : IEntityTypeConfiguration<Domain.Models.product.Product> {
-        public void Configure(EntityTypeBuilder<Domain.Models.product.Product> builder) {
+    public class ProductConfig : IEntityTypeConfiguration<Product> {
+        public void Configure(EntityTypeBuilder<Product> builder) {
             builder.ToTable("Products");
 
             builder.HasKey(prod => prod.Id);
@@ -41,11 +41,11 @@ namespace SupplyCompany.Infrastructure.DAL.Configuration {
                 .HasColumnName("LastModified")
                 .IsRequired();
 
-            builder.Ignore(p => p.ratings);
+            builder.Ignore(p => p.Ratings);
 
             builder.HasMany(o => o.SubProducts)
                 .WithOne()
-                .HasForeignKey(p => p.ProductId);
+                .HasForeignKey("MainProductId").IsRequired();
 
             builder.HasMany(o => o.ProductReviews)
                 .WithOne()

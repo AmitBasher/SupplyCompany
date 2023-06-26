@@ -14,7 +14,12 @@
         private static IServiceCollection AddRepostories(this IServiceCollection services) {
             return services.AddScoped<IUserRepository, UserRepository>()
                            .AddScoped<ICustomerRepository, CustomerRepository>()
-                           .AddScoped<ISupplierRepository, SupplierRepository>();
+                           .AddScoped<ISupplierRepository, SupplierRepository>()
+                           .AddScoped<IProductRepository, ProductRepository>()
+                           .AddScoped<IProductReviewRepository, ProductReviewRepository>()
+                           .AddScoped<ISupplierReviewRepository, SupplierReviewRepository>()
+                           .AddScoped<IOrderRepository, OrderRepository>()
+                           .AddScoped<ISupplyRequestRepository, SupplyRequestRepository>();
             //todo:AddRepositories Injection
         }
         private static IServiceCollection AddAuth(

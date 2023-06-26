@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace SupplyCompany.Infrastructure.DAL.Configuration {
-    public class SupplierReviewConfig : IEntityTypeConfiguration<Domain.Models.supplierReview.SupplierReview> {
-        public void Configure(EntityTypeBuilder<Domain.Models.supplierReview.SupplierReview> builder) {
+    public class SupplierReviewConfig : IEntityTypeConfiguration<SupplierReview> {
+        public void Configure(EntityTypeBuilder<SupplierReview> builder) {
             builder.ToTable("SupplierReviews");
             builder.HasKey(pr => pr.Id);
 

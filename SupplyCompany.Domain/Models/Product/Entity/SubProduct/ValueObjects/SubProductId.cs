@@ -6,4 +6,6 @@ public sealed class SubProductId : ID<SubProductId>
     { }
     public static SubProductId Create() => new(Guid.NewGuid());
     public static SubProductId CreateFrom(Guid id) => new(id);
+
+    public static SubProductId CreateFrom(string id) => new(Guid.Parse(id));
 }

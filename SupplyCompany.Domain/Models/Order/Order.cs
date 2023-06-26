@@ -26,8 +26,8 @@ public class Order : AggregateRoot<OrderId>{
     public static Order Create(
         CustomerId CustomerId,
         SupplierId SupplierId,
-        Location ShippingTo
-        ,params SupplyRequest[] SupplyRequests
+        Location ShippingTo,
+        List<SupplyRequest> SupplyRequests
         ) {
 
         //validations
@@ -40,7 +40,7 @@ public class Order : AggregateRoot<OrderId>{
             ) {
             ShippingTo = ShippingTo,
             OrderPriceValue = OrderPriceValue.Create(SupplyRequests),
-            _supplyRequests = SupplyRequests.ToList()
+            _supplyRequests = SupplyRequests
         };
     }
 }

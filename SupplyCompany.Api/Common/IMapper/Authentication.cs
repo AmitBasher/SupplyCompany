@@ -1,13 +1,10 @@
-﻿using SupplyCompany.Application.Users.Commands.Register;
-using SupplyCompany.Application.Users.Queries.Login;
-using SupplyCompany.DTO.Authentication;
-using SupplyCompany.Application.Customers.Commands.Create;
-using SupplyCompany.DTO.Customer;
-using SupplyCompany.Application.Suppliers.Commands.Create;
-using SupplyCompany.DTO.Supplier;
-
-namespace SupplyCompany.Api.Common.IMapper;
+﻿namespace SupplyCompany.Api.Common.IMapper;
 public static class Mapping {
+    public static IMapperConfigurationExpression General_cfg(this IMapperConfigurationExpression cfg) {
+        cfg.CreateMap<LocationRequest, LocationCommand>();
+        cfg.CreateMap<RatingRequest, RatingCommand>();
+        return cfg;
+    }
     public static IMapperConfigurationExpression Authentication_cfg(this IMapperConfigurationExpression cfg) {
         cfg.CreateMap<RegisterRequest, RegisterCommand>();
         cfg.CreateMap<LoginRequest, LoginCommand>();
@@ -15,11 +12,32 @@ public static class Mapping {
     }
     public static IMapperConfigurationExpression Customer_cfg(this IMapperConfigurationExpression cfg) {
         cfg.CreateMap<CreateCustomerRequest, CreateCustomerCommand>();
-        cfg.CreateMap<LocationRequest, LocationCommand>();
         return cfg;
     }
     public static IMapperConfigurationExpression Supplier_cfg(this IMapperConfigurationExpression cfg) {
         cfg.CreateMap<CreateSupplierRequest, CreateSupplierCommand>();
+        return cfg;
+    }
+    public static IMapperConfigurationExpression Product_cfg(this IMapperConfigurationExpression cfg) {
+        cfg.CreateMap<CreateProductRequest, CreateProductCommand>();
+        cfg.CreateMap<SubProductRequest, SubProductCommand>();
+        cfg.CreateMap<ProductAttributeRequest, ProductAttributeCommand>();
+        return cfg;
+    }
+    public static IMapperConfigurationExpression ProductReview_cfg(this IMapperConfigurationExpression cfg) {
+        cfg.CreateMap<CreateProductReviewRequest, CreateProductReviewCommand>();
+        return cfg;
+    }
+    public static IMapperConfigurationExpression SupplierReview_cfg(this IMapperConfigurationExpression cfg) {
+        cfg.CreateMap<CreateSupplierReviewRequest, CreateSupplierReviewCommand>();
+        return cfg;
+    }
+    public static IMapperConfigurationExpression Order_cfg(this IMapperConfigurationExpression cfg) {
+        cfg.CreateMap<CreateOrderRequest, CreateOrderCommand>();
+        return cfg;
+    }
+    public static IMapperConfigurationExpression SupplyRequest_cfg(this IMapperConfigurationExpression cfg) {
+        cfg.CreateMap<CreateSupplyRequestRequest, CreateSupplyRequestCommand>();
         return cfg;
     }
 }

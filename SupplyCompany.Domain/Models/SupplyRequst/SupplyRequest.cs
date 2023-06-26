@@ -1,9 +1,9 @@
 namespace SupplyCompany.Domain.Models.supplyRequest;
 
 public sealed class SupplyRequest : AggregateRoot<SupplyRequestId>{
-    public ProductReviewId ProductReviewId { get; private set; }
-    public SupplierReviewId SupplierReviewId { get; private set; }
-    public OrderId OrderId { get; private set; }
+    //public ProductReviewId ProductReviewId { get; private set; }
+    //public SupplierReviewId SupplierReviewId { get; private set; }
+    //public OrderId OrderId { get; private set; }
     public ProductId ProductId { get; private set; }
     public SubProductId SubProductId { get; private set; }
     public SupplierId SupplierId { get; private set; }
@@ -16,9 +16,6 @@ public sealed class SupplyRequest : AggregateRoot<SupplyRequestId>{
 
     private SupplyRequest(
         SupplyRequestId Id,
-        ProductReviewId ProductReviewId,
-        SupplierReviewId SupplierReviewId,
-        OrderId OrderId,
         ProductId ProductId,
         SubProductId SubProductId,
         SupplierId SupplierId,
@@ -29,9 +26,6 @@ public sealed class SupplyRequest : AggregateRoot<SupplyRequestId>{
         DateTime CreatedDateTime,
         DateTime LastModifiedDateTime)
         : base(Id){
-        this.ProductReviewId = ProductReviewId;
-        this.SupplierReviewId = SupplierReviewId;
-        this.OrderId = OrderId;
         this.ProductId = ProductId;
         this.SubProductId = SubProductId;
         this.SupplierId = SupplierId;
@@ -43,9 +37,6 @@ public sealed class SupplyRequest : AggregateRoot<SupplyRequestId>{
         this.LastModifiedDateTime = LastModifiedDateTime;
     }
     public static SupplyRequest Create(
-        ProductReviewId ProductReviewId,
-        SupplierReviewId SupplierReviewId,
-        OrderId OrderId,
         ProductId ProductId,
         SubProductId SubProductId,
         SupplierId SupplierId,
@@ -56,9 +47,6 @@ public sealed class SupplyRequest : AggregateRoot<SupplyRequestId>{
         //Todo:Validations
         return new(
             SupplyRequestId.Create(),
-            ProductReviewId,
-            SupplierReviewId,
-            OrderId,
             ProductId,
             SubProductId,
             SupplierId,

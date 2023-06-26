@@ -2,7 +2,7 @@
 {
     public sealed class SubProduct : Entity<SubProductId>
     {
-        public ProductId ProductId { get; private set; }
+        //public ProductId ProductId { get; private set; }
         public SupplierId SupplierId { get; private set; }
         public AverageRatings Rating { get; private set; }
         public string SubTitle { get; private set; }
@@ -15,7 +15,7 @@
             _attributes.AsReadOnly();
         private SubProduct(
             SubProductId id,
-            ProductId ProductId,
+            //ProductId ProductId,
             SupplierId SupplierId,
             string SubTitle,
             double Price,
@@ -24,7 +24,7 @@
             //,List<ProductAttribute> attributes
             ) : base(id)
         {
-            this.ProductId = ProductId;
+            //this.ProductId = ProductId;
             this.SupplierId = SupplierId;
             this.SubTitle = SubTitle;
             this.Price = Price;
@@ -34,7 +34,7 @@
             Rating = AverageRatings.CreateNew();
         }
         public static SubProduct Create(
-            ProductId ProductId,
+            //ProductId ProductId,
             SupplierId SupplierId,
             string SubTitle,
             double Price,
@@ -45,7 +45,7 @@
             //validation
             return new(
                 SubProductId.Create(),
-                ProductId,
+                //ProductId,
                 SupplierId,
                 SubTitle,
                 Price,

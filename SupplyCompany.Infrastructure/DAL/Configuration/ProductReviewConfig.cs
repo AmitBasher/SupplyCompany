@@ -3,8 +3,8 @@
 
 namespace SupplyCompany.Infrastructure.DAL.Configuration
 {
-    public class ProductReviewConfig : IEntityTypeConfiguration<Domain.Models.productReview.ProductReview> {
-        public void Configure(EntityTypeBuilder<Domain.Models.productReview.ProductReview> builder) {
+    public class ProductReviewConfig : IEntityTypeConfiguration<ProductReview> {
+        public void Configure(EntityTypeBuilder<ProductReview> builder) {
             builder.ToTable("ProductReviews");
             builder.HasKey(pr => pr.Id);
 

@@ -6,6 +6,9 @@ public class SupplyRequestRepository : ISupplyRequestRepository {
     }
     public async Task<IList<SupplyRequest>> GetSupplyRequests()
         => await _db.SupplyRequests.ToListAsync();
+    public async Task<List<SupplyRequest>> GetSupplyRequests(IList<SupplyRequestId> Ids) 
+        =>await _db.SupplyRequests.Where(S=>Ids.Contains(S.Id)).ToListAsync();
+    
     public async Task<SupplyRequest?> GetSupplyRequestsById(Guid id)
         => await _db.SupplyRequests.FirstOrDefaultAsync(u => u.Id.Equals(id));
     public async Task<int> DeleteSupplyRequestById(Guid id)
